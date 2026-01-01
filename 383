@@ -1,0 +1,21 @@
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        countrs = {}
+        countmg = {}
+        for let in ransomNote:
+            if let in countrs:
+                countrs[let] += 1
+            else:
+                countrs[let] = 1
+        for let in magazine:
+            if let in countmg:
+                countmg[let] += 1
+            else:
+                countmg[let] = 1
+        for key in countrs:
+            try:
+                if countrs[key] > countmg[key]:
+                    return False
+            except:
+                return False
+        return True
