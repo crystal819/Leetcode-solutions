@@ -1,0 +1,15 @@
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        node_n = 0
+        current_node = head
+        mid = head
+        while current_node != None:
+            current_node = current_node.next
+            node_n += 1
+            try:
+                current_node = current_node.next
+                node_n += 1
+                mid = mid.next
+            except:
+                break
+        return mid
