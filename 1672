@@ -1,0 +1,11 @@
+class Solution:
+    def maximumWealth(self, accounts: List[List[int]]) -> int:
+        wealths = []
+        highest = 0
+        for i in range(len(accounts)):
+            total = 0
+            for bal in accounts[i]:
+                total += bal
+            if total > highest:
+                highest = total
+        return highest
